@@ -1,0 +1,30 @@
+{
+  "name": "black-dashboard",
+  "version": "1.0.0",
+  "description": "Black Dasboard Fleet IQ hackaton 2025",
+  "main": "index.html",
+  "directories": {
+    "example": "root"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  
+  "keywords": [
+    "black dashboard",
+    "bootstrap admin",
+    "bootstrap dashboard"
+  ],
+  "author": "Fleet IQ",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-install": "^1.1.0",
+    "gulp-open": "^3.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "sass": "^1.49.9"
+  }
+}
