@@ -54,6 +54,12 @@
           <p>Contracts</p>
         </a>
       </li>
+            <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#contact_details" role="tab">
+          <i class="tim-icons icon-light-3"></i>
+          <p>Contract details</p>
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#telematix" role="tab">
           <i class="tim-icons icon-chart-bar-32"></i>
@@ -109,7 +115,7 @@
         <li class="dropdown nav-item">
           <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
             <div class="photo">
-              <img src="../assets/img/anime3.png" alt="Profile Photo" />
+              <img src="../assets/img/avatar_user.jpg" alt="Profile Photo" />
             </div>
             <b class="caret d-none d-lg-block d-xl-block"></b>
             <p class="d-lg-none">Log out</p>
@@ -151,6 +157,68 @@
               role="tabpanel"
             >
               <h2>Dashboard page</h2>
+              <div class="row">
+  <!-- Revenue Uplift Card -->
+  <div class="col-md-3 d-flex align-items-stretch mb-3">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="card-title">Revenue Uplift</h4>
+          <h3 class="text-info mb-3" style="font-size: 2.5rem;">
+            $1.2M <i class="tim-icons icon-user-run mr-2"></i>
+          </h3>
+        </div>
+        <p class="card-text">Next 90 days</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Renewal Rate Card -->
+  <div class="col-md-3 d-flex align-items-stretch mb-3">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="card-title">Renewal Rate</h4>
+          <h3 class="text-success mb-3" style="font-size: 2.5rem;">
+            72% <i class="tim-icons icon-tap-02 mr-2"></i>
+          </h3>
+        </div>
+        <p class="card-text">Rolling 12 mo</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upgrade Rate Card -->
+  <div class="col-md-3 d-flex align-items-stretch mb-3">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="card-title">Upgrade Rate</h4>
+          <h3 class="text-warning mb-3" style="font-size: 2.5rem;">
+            28% <i class="tim-icons icon-send mr-2"></i>
+          </h3>
+        </div>
+        <p class="card-text">Campaign-driven</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Active Contracts Card -->
+  <div class="col-md-3 d-flex align-items-stretch mb-3">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="card-title">Active Contracts</h4>
+          <h3 class="text-danger mb-3" style="font-size: 2.5rem;">
+            880 <i class="tim-icons icon-single-02 mr-2"></i>
+          </h3>
+        </div>
+        <p class="card-text">Across CLC & VLV</p>
+      </div>
+    </div>
+  </div>
+</div>
+
             </div>
             <!-- Contracts page -->
             <div class="tab-pane fade" id="contracts" role="tabpanel">
@@ -159,22 +227,23 @@
               <div class="row">
   <div class="col-md-8">
     <div class="card">
-      <div class="card-body">
-        <div class="form-group">
-          <label for="selectContractID">Select Contract ID</label>
-          <select class="form-control" id="selectContractID">
-            <!-- Options will be injected here -->
-          </select>
+      <div class="card-header">
+        <h4 class="title">Contracts</h4>
+      </div>
+      <!-- Contract selector contract dropdown  -->
+      <div class="row">
+        <div class="col-md-8">
+          <div class="col-md-6 pr-md-1">
+            <div class="form-group">
+              <label for="selectContractID">Select Contract ID</label>
+              <select class="form-control" id="selectContractID">
+                <!-- Options will be injected here -->
+              </select>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
- 
-              
-              <div class="row">
-  <div class="col-md-8">
-    <div class="card">
+
       <div class="card-header">
         <h5 class="title">Contract Information</h5>
       </div>
@@ -224,12 +293,61 @@
   </div>
 </div>
 
-            
             </div>
             <!-- End Contracts page -->
 
+            <div class="tab-pane fade" id="contact_details" role="tabpanel">
+              <h2>Contact details</h2>
+            </div>
+
             <div class="tab-pane fade" id="telematix" role="tabpanel">
               <h2>Telematix page</h2>
+              <div class="col-md-12">
+  <div class="card ">
+    <div class="card-header">
+      <h4 class="card-title">Telematix Info</h4>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table tablesorter" id="">
+          <thead class="text-primary">
+            <tr>
+              <th>Vehicle ID</th>
+              <th>Speed (km/h)</th>
+              <th>Fuel Level (%)</th>
+              <th>Location</th>
+              <th class="text-center">Timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TRK-1023</td>
+              <td>78</td>
+              <td>56%</td>
+              <td>Berlin, DE</td>
+              <td class="text-center">2025-09-06 08:32</td>
+            </tr>
+            <tr>
+              <td>VAN-4431</td>
+              <td>62</td>
+              <td>72%</td>
+              <td>Paris, FR</td>
+              <td class="text-center">2025-09-06 09:15</td>
+            </tr>
+            <tr>
+              <td>CAR-7788</td>
+              <td>95</td>
+              <td>34%</td>
+              <td>Madrid, ES</td>
+              <td class="text-center">2025-09-06 10:04</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
             </div>
 
             <!-- User Profile Page -->
@@ -389,7 +507,7 @@
     <script>
       $(document).ready(function () {
         // Javascript method's body can be found in assets/js/demos.js
-        demo.initDashboardPageCharts();
+        // demo.initDashboardPageCharts();
       });
     </script>
   </body>

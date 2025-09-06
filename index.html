@@ -48,20 +48,23 @@
               role="tabpanel"
             >
               <h2>Dashboard page</h2>
+              @@include('dashboardCardsInfo.html')
             </div>
             <!-- Contracts page -->
             <div class="tab-pane fade" id="contracts" role="tabpanel">
               <h2>Contracts page</h2>
 
-              @@include('contractDropdown.html') 
-              
               @@include('contractForm.html')
-            
             </div>
             <!-- End Contracts page -->
 
+            <div class="tab-pane fade" id="contact_details" role="tabpanel">
+              <h2>Contact details</h2>
+            </div>
+
             <div class="tab-pane fade" id="telematix" role="tabpanel">
               <h2>Telematix page</h2>
+              @@include('telematixTable.html')
             </div>
 
             <!-- User Profile Page -->
@@ -151,7 +154,7 @@
     <script>
       $(document).ready(function () {
         // Javascript method's body can be found in assets/js/demos.js
-        demo.initDashboardPageCharts();
+        // demo.initDashboardPageCharts();
       });
     </script>
   </body>
