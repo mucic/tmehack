@@ -159,7 +159,7 @@
               <h2>Dashboard page</h2>
               <div class="row">
   <!-- Revenue Uplift Card -->
-  <div class="col-md-3 d-flex align-items-stretch mb-3">
+  <div class="col-md-3 d-flex align-items-stretch mb-4">
     <div class="card h-100">
       <div class="card-body d-flex flex-column justify-content-between">
         <div>
@@ -174,7 +174,7 @@
   </div>
 
   <!-- Renewal Rate Card -->
-  <div class="col-md-3 d-flex align-items-stretch mb-3">
+  <div class="col-md-3 d-flex align-items-stretch mb-4">
     <div class="card h-100">
       <div class="card-body d-flex flex-column justify-content-between">
         <div>
@@ -189,7 +189,7 @@
   </div>
 
   <!-- Upgrade Rate Card -->
-  <div class="col-md-3 d-flex align-items-stretch mb-3">
+  <div class="col-md-3 d-flex align-items-stretch mb-4">
     <div class="card h-100">
       <div class="card-body d-flex flex-column justify-content-between">
         <div>
@@ -204,7 +204,7 @@
   </div>
 
   <!-- Active Contracts Card -->
-  <div class="col-md-3 d-flex align-items-stretch mb-3">
+  <div class="col-md-3 d-flex align-items-stretch mb-4">
     <div class="card h-100">
       <div class="card-body d-flex flex-column justify-content-between">
         <div>
@@ -220,53 +220,84 @@
 </div>
 
               <div class="row">
-  <!-- Upgrade Opportunities Funnel -->
-  <div class="col-xl-8 mb-4">
-    <div class="card shadow">
-      <div class="card-body d-flex flex-column">
-        <h4 class="mb-4">Upgrade Opportunities Funnel</h4>
-        <div
-          class="flex-fill d-flex align-items-center justify-content-center"
-          style="height: 14rem"
-        >
-          <svg
-            viewBox="0 0 500 200"
-            class="w-100 h-100"
-            style="max-width: 32rem"
-          >
-            <defs>
-              <linearGradient id="funnelGradient" x1="0" x2="1">
-                <stop offset="0%" stop-color="#fd2e4a"></stop>
-                <stop offset="100%" stop-color="#f95830"></stop>
-              </linearGradient>
-            </defs>
-            <polygon
-              points="40,20 460,20 400,70 100,70"
-              fill="url(#funnelGradient)"
-              opacity="0.9"
-            ></polygon>
-            <polygon
-              points="100,80 400,80 360,125 140,125"
-              fill="url(#funnelGradient)"
-              opacity="0.75"
-            ></polygon>
-            <polygon
-              points="160,135 340,135 320,180 180,180"
-              fill="url(#funnelGradient)"
-              opacity="0.6"
-            ></polygon>
-            <text x="200" y="49" fill="#f8f9fa" font-size="14">
-              Stage 1: 1,200
-            </text>
-            <text x="200" y="105" fill="#f8f9fa" font-size="14">
-              Stage 2: 850
-            </text>
-            <text x="200" y="160" fill="#f8f9fa" font-size="14">
-              Stage 3: 340
-            </text>
-          </svg>
+          <div class="col-12">
+            <div class="card card-chart">
+              <div class="card-header ">
+                <div class="row">
+                  <div class="col-sm-6 text-left">
+                    <h5 class="card-category">Total Stats</h5>
+                    <h2 class="card-title">Performance</h2>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                      <label class="btn btn-sm btn-primary btn-simple" id="0">
+                        <input type="radio" name="options" checked="">
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Accounts</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-single-02"></i>
+                        </span>
+                      </label>
+                      <label class="btn btn-sm btn-primary btn-simple" id="1">
+                        <input type="radio" class="d-none d-sm-none" name="options">
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Renewals</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-gift-2"></i>
+                        </span>
+                      </label>
+                      <label class="btn btn-sm btn-primary btn-simple active" id="2">
+                        <input type="radio" class="d-none" name="options">
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Upgrades</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-tap-02"></i>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart-area"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                  <canvas id="chartBig1" width="1882" height="440" style="display: block; height: 220px; width: 941px;" class="chartjs-render-monitor"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+              <div class="row">
+                <div class="col-xl-8 mb-4 col-xl-8 mb-4 d-flex align-items-stretch"><!-- Upgrade Opportunities Funnel -->
+<div class="card shadow">
+  <div class="card-body d-flex flex-column">
+    <h4 class="mb-4">Upgrade Opportunities Funnel</h4>
+    <div
+      class="flex-fill d-flex align-items-center justify-content-center"
+      style="height: 14rem"
+    >
+      <svg viewBox="0 0 500 200" class="w-100 h-100" style="max-width: 32rem">
+        <defs>
+          <linearGradient id="funnelGradient" x1="0" x2="1">
+            <stop offset="0%" stop-color="#fd2e4a"></stop>
+            <stop offset="100%" stop-color="#f95830"></stop>
+          </linearGradient>
+        </defs>
+        <polygon
+          points="40,20 460,20 400,70 100,70"
+          fill="url(#funnelGradient)"
+          opacity="0.9"
+        ></polygon>
+        <polygon
+          points="100,80 400,80 360,125 140,125"
+          fill="url(#funnelGradient)"
+          opacity="0.75"
+        ></polygon>
+        <polygon
+          points="160,135 340,135 320,180 180,180"
+          fill="url(#funnelGradient)"
+          opacity="0.6"
+        ></polygon>
+        <text x="200" y="49" fill="#f8f9fa" font-size="14">Stage 1: 1,200</text>
+        <text x="200" y="105" fill="#f8f9fa" font-size="14">Stage 2: 850</text>
+        <text x="200" y="160" fill="#f8f9fa" font-size="14">Stage 3: 340</text>
+      </svg>
     </div>
   </div>
 
@@ -274,7 +305,60 @@
 
   <!-- End Customer List -->
 </div>
-
+</div>
+                <div class="col-xl-4 mb-4 col-xl-4 mb-4 d-flex align-items-stretch"><div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Top 5 Customers to Contact Today</h4>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table tablesorter" id="">
+        <thead class="text-primary">
+          <tr>
+            <th>Name</th>
+            <th>Vehicle</th>
+            <th>Next Service</th>
+            <th class="text-center">Usage (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John D.</td>
+            <td>BMW X3</td>
+            <td>Aug 2025</td>
+            <td class="text-center">95</td>
+          </tr>
+          <tr>
+            <td>Urban Rides</td>
+            <td>Tesla Model 3</td>
+            <td>Sep 2025</td>
+            <td class="text-center">89</td>
+          </tr>
+          <tr>
+            <td>ACME Inc.</td>
+            <td>Fleet of 5</td>
+            <td>Dec 2025</td>
+            <td class="text-center">120</td>
+          </tr>
+          <tr>
+            <td>Blue Logistics</td>
+            <td>Vans (3)</td>
+            <td>Oct 2025</td>
+            <td class="text-center">110</td>
+          </tr>
+          <tr>
+            <td>Sarah L.</td>
+            <td>Audi A4</td>
+            <td>Nov 2025</td>
+            <td class="text-center">70</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+              </div>
             </div>
             <!-- Contracts page -->
             <div class="tab-pane fade" id="contracts" role="tabpanel">
@@ -510,6 +594,7 @@
     <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script>
     <!-- Black Dashboard DEMO methods, don't include it in your project! -->
     <script src="../assets/demo/demo.js"></script>
+    <script src="../assets/js/utilities.js"></script>
     <script>
       $(document).ready(function () {
         $().ready(function () {
@@ -562,8 +647,8 @@
     </script>
     <script>
       $(document).ready(function () {
-        // Javascript method's body can be found in assets/js/demos.js
-        // demo.initDashboardPageCharts();
+        // Controlls example notification
+        utilities.showSuccessNotification("bottom","right","Welcome to <b>FleetIQ</b> - Dashboard !");
       });
     </script>
   </body>
