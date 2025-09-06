@@ -34,6 +34,7 @@
       <!-- END Sidebar Navigation -->
 
       <div class="main-panel">
+        
         <!-- Top Navbar -->
         @@include('navbar.html')
         <!-- End Top Navbar -->
@@ -42,6 +43,8 @@
         <div class="content">
           <!-- TABS Switch for Pages -->
           <div class="tab-content">
+            
+            <!-- Dashboard page -->
             <div
               class="tab-pane fade show active"
               id="dashboard"
@@ -55,6 +58,8 @@
                 <div class="col-xl-4 mb-4 col-xl-4 mb-4 d-flex align-items-stretch">@@include('topContactUsers.html')</div>
               </div>
             </div>
+            <!-- End Dashboard page -->
+
             <!-- Contracts page -->
             <div class="tab-pane fade" id="contracts" role="tabpanel">
               <h2>Contracts page</h2>
@@ -67,10 +72,12 @@
               <h2>Contact details</h2>
             </div>
 
+            <!-- Telematix Page -->
             <div class="tab-pane fade" id="telematix" role="tabpanel">
               <h2>Telematix page</h2>
               @@include('telematixTable.html')
             </div>
+            <!-- End Telematix Page -->
 
             <!-- User Profile Page -->
             <div class="tab-pane fade" id="user_profile" role="tabpanel">
@@ -85,6 +92,7 @@
               @@include('integrationsBox.html')
             </div>
             <!-- End Settings Page -->
+
           </div>
           <!-- End TABS Switch for Pages -->
         </div>
@@ -161,6 +169,8 @@
       $(document).ready(function () {
         // Controlls example notification
         utilities.showSuccessNotification("bottom","right","Welcome to <b>FleetIQ</b> - Dashboard !");
+
+        // Dashboard page chart init
         demo.initDashboardPageCharts();
       });
     </script>

@@ -85,6 +85,7 @@
       <!-- END Sidebar Navigation -->
 
       <div class="main-panel">
+        
         <!-- Top Navbar -->
         <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
   <div class="container-fluid">
@@ -151,6 +152,8 @@
         <div class="content">
           <!-- TABS Switch for Pages -->
           <div class="tab-content">
+            
+            <!-- Dashboard page -->
             <div
               class="tab-pane fade show active"
               id="dashboard"
@@ -360,6 +363,8 @@
 </div>
               </div>
             </div>
+            <!-- End Dashboard page -->
+
             <!-- Contracts page -->
             <div class="tab-pane fade" id="contracts" role="tabpanel">
               <h2>Contracts page</h2>
@@ -440,6 +445,7 @@
               <h2>Contact details</h2>
             </div>
 
+            <!-- Telematix Page -->
             <div class="tab-pane fade" id="telematix" role="tabpanel">
               <h2>Telematix page</h2>
               <div class="col-md-12">
@@ -489,6 +495,7 @@
 </div>
 
             </div>
+            <!-- End Telematix Page -->
 
             <!-- User Profile Page -->
             <div class="tab-pane fade" id="user_profile" role="tabpanel">
@@ -573,6 +580,7 @@
 
             </div>
             <!-- End Settings Page -->
+
           </div>
           <!-- End TABS Switch for Pages -->
         </div>
@@ -649,6 +657,8 @@
       $(document).ready(function () {
         // Controlls example notification
         utilities.showSuccessNotification("bottom","right","Welcome to <b>FleetIQ</b> - Dashboard !");
+
+        // Dashboard page chart init
         demo.initDashboardPageCharts();
       });
     </script>
