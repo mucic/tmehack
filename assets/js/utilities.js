@@ -20,6 +20,22 @@ utilities = {
       }
     );
   },
+  showBotNotification: function (msg, from ="top", align="right") {
+    $.notify(
+      {
+        icon: "tim-icons icon-spaceship",
+        message: msg,
+      },
+      {
+        type: type[1],
+        timer: 5000,
+        placement: {
+          from: from,
+          align: align,
+        },
+      }
+    );
+  },
   showErrorNotification: function (msg, from ="bottom", align="right") {
     $.notify(
       {

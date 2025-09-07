@@ -65,6 +65,7 @@
               <h2>Contracts page</h2>
 
               @@include('contractForm.html')
+              @@include('calculationResults.html')
             </div>
             <!-- End Contracts page -->
 
@@ -172,6 +173,31 @@
 
         // Dashboard page chart init
         demo.initDashboardPageCharts();
+        
+        //Show notifications
+        $("#addToCampaignBtn").on("click", function() {
+            utilities.showSuccessNotification("<i class='tim-icons icon-volume-98'></i> <b>FleetIQ</b> - Contact added to Campaign !");
+        });
+
+        $("#sendBotNotificationBtn").on("click", function() {
+            utilities.showBotNotification("<i class='tim-icons icon-spaceship'></i> <b>FleetIQ</b> - Bot notification sent to the user !");
+        });
+
+
+
+        // Show/Hide Contract Form/Results
+        // TO DO: Revisit on LIVE version
+        // $("#contractForm").hide();
+        $("#calculationResults").hide();
+        $("#predictResultsBtn").on("click", function() {
+            $("#calculationResults").show();
+            $("#contractForm").hide();
+        });
+        $("#closeResults").on("click", function() {
+            $("#calculationResults").hide();
+            $("#contractForm").show();
+        });
+
       });
     </script>
   </body>

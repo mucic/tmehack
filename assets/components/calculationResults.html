@@ -1,0 +1,77 @@
+<div class="row" id="calculationResults">
+  <!-- Close button -->
+  <div class="col-12 text-right">
+    <button type="button" id="closeResults" class="close text-white py-3 px-3" aria-label="Close">
+      <i class="tim-icons icon-simple-remove"></i>
+    </button>
+  </div>
+
+  <!-- Contract Details -->
+  <div class="col-md-8">
+    <div class="card bg-dark text-white mb-4">
+      <div class="card-header border-0">
+        <h5 class="mb-0">AI Recommendation results</h5>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush bg-dark text-white">
+          <li class="list-group-item bg-dark text-white d-flex justify-content-between">
+            <span>Contract ID:</span> <strong id="cr-contract_id">LC0001</strong>
+          </li>
+          <li class="list-group-item bg-dark text-white d-flex justify-content-between">
+            <span>Estimated Business Value:</span> 
+            <span id="cr-estimated_business_value" class="display-4">$4.138,05</span>
+          </li>
+          <li class="list-group-item bg-dark text-white">
+            <h6 class="mt-3">Summary</h6>
+            <p id="cr-summary">
+              The customer has a high credit score (788), no missing payments and a high 
+              engagement score. The loan term is 36 months, and 67% of the term has elapsed, 
+              making this an ideal time for an upgrade.
+            </p>
+          </li>
+          <li class="list-group-item bg-dark text-white">
+            <h6 class="mt-3">Justification</h6>
+            <p id="cr-justification">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="list-group-item bg-dark text-white">
+            <h6 class="mt-3">Business Value Calculation</h6>
+            <p id="cr-business_value_calculation">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommendation + Metrics -->
+  <div class="col-md-4">
+    <div class="card bg-dark text-white mb-4">
+      <div class="card-body">
+        <h4 class="card-title">AI Recommendation</h4>
+        
+        <p>
+          <strong>Readiness score:</strong> 
+          <span id="cr-readiness_score" class="badge badge-success w-50">92%</span>
+        </p>
+        
+        <p>
+          <strong>Recommended model:</strong><br>
+          <span id="cr-recommended_model">Lexus NX Plug-in Hybrid</span>
+        </p>
+
+        <p>
+          <strong>Loan Term Progress:</strong>
+        </p>
+        <div class="progress mb-3">
+          <div id="loanTermProgressBar"class="progress-bar bg-info" role="progressbar" style="width: 67%;" 
+               aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
+            67%
+          </div>
+        </div>
+      </div>
+      <div class="card-footer d-flex justify-content-between">
+          <button id="addToCampaignBtn" class="btn btn-primary btn-sm mx-1">Add to Campaign</button>
+        <button id="sendBotNotificationBtn" class="btn btn-primary btn-sm">Send Bot Notification</button>
+      </div>
+    </div>
+  </div>
+</div>
