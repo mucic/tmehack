@@ -54,6 +54,12 @@
           <p>Contracts</p>
         </a>
       </li>
+            <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#contact_details" role="tab">
+          <i class="tim-icons icon-light-3"></i>
+          <p>Contract details</p>
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#telematix" role="tab">
           <i class="tim-icons icon-chart-bar-32"></i>
@@ -79,6 +85,7 @@
       <!-- END Sidebar Navigation -->
 
       <div class="main-panel">
+        
         <!-- Top Navbar -->
         <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
   <div class="container-fluid">
@@ -109,7 +116,7 @@
         <li class="dropdown nav-item">
           <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
             <div class="photo">
-              <img src="https://cdn.jsdelivr.net/gh/mucic/tmehack@main/assets/img/anime3.png" alt="Profile Photo" />
+              <img src="https://cdn.jsdelivr.net/gh/mucic/tmehack@main/assets/img/avatar_user.jpg" alt="Profile Photo" />
             </div>
             <b class="caret d-none d-lg-block d-xl-block"></b>
             <p class="d-lg-none">Log out</p>
@@ -145,13 +152,219 @@
         <div class="content">
           <!-- TABS Switch for Pages -->
           <div class="tab-content">
+            
+            <!-- Dashboard page -->
             <div
               class="tab-pane fade show active"
               id="dashboard"
               role="tabpanel"
             >
               <h2>Dashboard page</h2>
+              <div class="row">
+  <!-- Revenue Uplift Card -->
+  <div class="col-md-3 d-flex align-items-stretch mb-4">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="card-title">Revenue Uplift</h4>
+          <h3 class="text-info mb-3" style="font-size: 2.5rem;">
+            $1.2M <i class="tim-icons icon-user-run mr-2"></i>
+          </h3>
+        </div>
+        <p class="card-text">Next 90 days</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Renewal Rate Card -->
+  <div class="col-md-3 d-flex align-items-stretch mb-4">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="card-title">Renewal Rate</h4>
+          <h3 class="text-success mb-3" style="font-size: 2.5rem;">
+            72% <i class="tim-icons icon-tap-02 mr-2"></i>
+          </h3>
+        </div>
+        <p class="card-text">Rolling 12 mo</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upgrade Rate Card -->
+  <div class="col-md-3 d-flex align-items-stretch mb-4">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="card-title">Upgrade Rate</h4>
+          <h3 class="text-warning mb-3" style="font-size: 2.5rem;">
+            28% <i class="tim-icons icon-send mr-2"></i>
+          </h3>
+        </div>
+        <p class="card-text">Campaign-driven</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Active Contracts Card -->
+  <div class="col-md-3 d-flex align-items-stretch mb-4">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="card-title">Active Contracts</h4>
+          <h3 class="text-danger mb-3" style="font-size: 2.5rem;">
+            880 <i class="tim-icons icon-single-02 mr-2"></i>
+          </h3>
+        </div>
+        <p class="card-text">Across CLC & VLV</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+              <div class="row">
+          <div class="col-12">
+            <div class="card card-chart">
+              <div class="card-header ">
+                <div class="row">
+                  <div class="col-sm-6 text-left">
+                    <h5 class="card-category">Total Stats</h5>
+                    <h2 class="card-title">Performance</h2>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                      <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                        <input type="radio" name="options" checked="">
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Accounts</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-single-02"></i>
+                        </span>
+                      </label>
+                      <label class="btn btn-sm btn-primary btn-simple" id="1">
+                        <input type="radio" class="d-none d-sm-none" name="options">
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Renewals</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-gift-2"></i>
+                        </span>
+                      </label>
+                      <label class="btn btn-sm btn-primary btn-simple" id="2">
+                        <input type="radio" class="d-none" name="options">
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Upgrades</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-tap-02"></i>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart-area"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                  <canvas id="chartBig1" width="1882" height="440" style="display: block; height: 220px; width: 941px;" class="chartjs-render-monitor"></canvas>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+              <div class="row">
+                <div class="col-xl-8 mb-4 col-xl-8 mb-4 d-flex align-items-stretch"><!-- Upgrade Opportunities Funnel -->
+<div class="card shadow">
+  <div class="card-body d-flex flex-column">
+    <h4 class="mb-4">Upgrade Opportunities Funnel</h4>
+    <div
+      class="flex-fill d-flex align-items-center justify-content-center"
+      style="height: 14rem"
+    >
+      <svg viewBox="0 0 500 200" class="w-100 h-100" style="max-width: 32rem">
+        <defs>
+          <linearGradient id="funnelGradient" x1="0" x2="1">
+            <stop offset="0%" stop-color="#fd2e4a"></stop>
+            <stop offset="100%" stop-color="#f95830"></stop>
+          </linearGradient>
+        </defs>
+        <polygon
+          points="40,20 460,20 400,70 100,70"
+          fill="url(#funnelGradient)"
+          opacity="0.9"
+        ></polygon>
+        <polygon
+          points="100,80 400,80 360,125 140,125"
+          fill="url(#funnelGradient)"
+          opacity="0.75"
+        ></polygon>
+        <polygon
+          points="160,135 340,135 320,180 180,180"
+          fill="url(#funnelGradient)"
+          opacity="0.6"
+        ></polygon>
+        <text x="200" y="49" fill="#f8f9fa" font-size="14">Stage 1: 1,200</text>
+        <text x="200" y="105" fill="#f8f9fa" font-size="14">Stage 2: 850</text>
+        <text x="200" y="160" fill="#f8f9fa" font-size="14">Stage 3: 340</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Top 5 Customers to Contact Today -->
+
+  <!-- End Customer List -->
+</div>
+</div>
+                <div class="col-xl-4 mb-4 col-xl-4 mb-4 d-flex align-items-stretch"><div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Top 5 Customers to Contact Today</h4>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table tablesorter" id="">
+        <thead class="text-primary">
+          <tr>
+            <th>Name</th>
+            <th>Vehicle</th>
+            <th>Next Service</th>
+            <th class="text-center">Usage (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John D.</td>
+            <td>BMW X3</td>
+            <td>Aug 2025</td>
+            <td class="text-center">95</td>
+          </tr>
+          <tr>
+            <td>Urban Rides</td>
+            <td>Tesla Model 3</td>
+            <td>Sep 2025</td>
+            <td class="text-center">89</td>
+          </tr>
+          <tr>
+            <td>ACME Inc.</td>
+            <td>Fleet of 5</td>
+            <td>Dec 2025</td>
+            <td class="text-center">120</td>
+          </tr>
+          <tr>
+            <td>Blue Logistics</td>
+            <td>Vans (3)</td>
+            <td>Oct 2025</td>
+            <td class="text-center">110</td>
+          </tr>
+          <tr>
+            <td>Sarah L.</td>
+            <td>Audi A4</td>
+            <td>Nov 2025</td>
+            <td class="text-center">70</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+              </div>
+            </div>
+            <!-- End Dashboard page -->
+
             <!-- Contracts page -->
             <div class="tab-pane fade" id="contracts" role="tabpanel">
               <h2>Contracts page</h2>
@@ -159,22 +372,23 @@
               <div class="row">
   <div class="col-md-8">
     <div class="card">
-      <div class="card-body">
-        <div class="form-group">
-          <label for="selectContractID">Select Contract ID</label>
-          <select class="form-control" id="selectContractID">
-            <!-- Options will be injected here -->
-          </select>
+      <div class="card-header">
+        <h4 class="title">Contracts</h4>
+      </div>
+      <!-- Contract selector contract dropdown  -->
+      <div class="row">
+        <div class="col-md-8">
+          <div class="col-md-6 pr-md-1">
+            <div class="form-group">
+              <label for="selectContractID">Select Contract ID</label>
+              <select class="form-control" id="selectContractID">
+                <!-- Options will be injected here -->
+              </select>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
- 
-              
-              <div class="row">
-  <div class="col-md-8">
-    <div class="card">
+
       <div class="card-header">
         <h5 class="title">Contract Information</h5>
       </div>
@@ -224,13 +438,64 @@
   </div>
 </div>
 
-            
             </div>
             <!-- End Contracts page -->
 
+            <div class="tab-pane fade" id="contact_details" role="tabpanel">
+              <h2>Contact details</h2>
+            </div>
+
+            <!-- Telematix Page -->
             <div class="tab-pane fade" id="telematix" role="tabpanel">
               <h2>Telematix page</h2>
+              <div class="col-md-12">
+  <div class="card ">
+    <div class="card-header">
+      <h4 class="card-title">Telematix Info</h4>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table tablesorter" id="">
+          <thead class="text-primary">
+            <tr>
+              <th>Vehicle ID</th>
+              <th>Speed (km/h)</th>
+              <th>Fuel Level (%)</th>
+              <th>Location</th>
+              <th class="text-center">Timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TRK-1023</td>
+              <td>78</td>
+              <td>56%</td>
+              <td>Berlin, DE</td>
+              <td class="text-center">2025-09-06 08:32</td>
+            </tr>
+            <tr>
+              <td>VAN-4431</td>
+              <td>62</td>
+              <td>72%</td>
+              <td>Paris, FR</td>
+              <td class="text-center">2025-09-06 09:15</td>
+            </tr>
+            <tr>
+              <td>CAR-7788</td>
+              <td>95</td>
+              <td>34%</td>
+              <td>Madrid, ES</td>
+              <td class="text-center">2025-09-06 10:04</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
             </div>
+            <!-- End Telematix Page -->
 
             <!-- User Profile Page -->
             <div class="tab-pane fade" id="user_profile" role="tabpanel">
@@ -315,6 +580,7 @@
 
             </div>
             <!-- End Settings Page -->
+
           </div>
           <!-- End TABS Switch for Pages -->
         </div>
@@ -336,6 +602,7 @@
     <script src="https://cdn.jsdelivr.net/gh/mucic/tmehack@main/assets/js/black-dashboard.min.js?v=1.0.0"></script>
     <!-- Black Dashboard DEMO methods, don't include it in your project! -->
     <script src="https://cdn.jsdelivr.net/gh/mucic/tmehack@main/assets/demo/demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mucic/tmehack@main/assets/js/utilities.js"></script>
     <script>
       $(document).ready(function () {
         $().ready(function () {
@@ -388,7 +655,10 @@
     </script>
     <script>
       $(document).ready(function () {
-        // Javascript method's body can be found in assets/js/demos.js
+        // Controlls example notification
+        utilities.showSuccessNotification("bottom","right","Welcome to <b>FleetIQ</b> - Dashboard !");
+
+        // Dashboard page chart init
         demo.initDashboardPageCharts();
       });
     </script>
