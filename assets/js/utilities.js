@@ -1,14 +1,14 @@
 type = ["primary", "info", "success", "warning", "danger"];
 
 utilities = {
-  showRandomNotification: function (from, align) {
+  showRandomNotification: function (msg, from, align) {
     color = Math.floor(Math.random() * 4 + 1);
 
     $.notify(
       {
         icon: "tim-icons icon-bell-55",
-        message:
-          "Welcome to <b>Black Dashboard</b> - a beautiful freebie for every web developer.",
+        message: msg ||
+          "Welcome to <b>FleetIQ</b> - Hackathon2025.",
       },
       {
         type: type[color],
@@ -20,7 +20,7 @@ utilities = {
       }
     );
   },
-  showErrorNotification: function (from, align, msg) {
+  showErrorNotification: function (msg, from ="bottom", align="right") {
     $.notify(
       {
         icon: "tim-icons icon-bell-55",
@@ -36,7 +36,7 @@ utilities = {
       }
     );
   },
-  showSuccessNotification: function (from, align, msg) {
+  showSuccessNotification: function (msg, from = "top", align="right") {
     $.notify(
       {
         icon: "tim-icons icon-bell-55",
