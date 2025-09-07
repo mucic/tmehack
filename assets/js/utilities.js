@@ -1,4 +1,4 @@
-type = ["primary", "info", "success", "warning", "danger"];
+type = ['primary', 'info', 'success', 'warning', 'danger'];
 
 utilities = {
   showRandomNotification: function (msg, from, align) {
@@ -6,9 +6,8 @@ utilities = {
 
     $.notify(
       {
-        icon: "tim-icons icon-bell-55",
-        message: msg ||
-          "Welcome to <b>FleetIQ</b> - Hackathon2025.",
+        icon: 'tim-icons icon-bell-55',
+        message: msg || 'Welcome to <b>FleetIQ</b> - Hackathon2025.',
       },
       {
         type: type[color],
@@ -20,10 +19,10 @@ utilities = {
       }
     );
   },
-  showBotNotification: function (msg, from ="top", align="right") {
+  showBotNotification: function (msg, from = 'top', align = 'right') {
     $.notify(
       {
-        icon: "tim-icons icon-spaceship",
+        icon: 'tim-icons icon-spaceship',
         message: msg,
       },
       {
@@ -36,10 +35,10 @@ utilities = {
       }
     );
   },
-  showErrorNotification: function (msg, from ="bottom", align="right") {
+  showErrorNotification: function (msg, from = 'bottom', align = 'right') {
     $.notify(
       {
-        icon: "tim-icons icon-bell-55",
+        icon: 'tim-icons icon-bell-55',
         message: msg,
       },
       {
@@ -52,10 +51,10 @@ utilities = {
       }
     );
   },
-  showSuccessNotification: function (msg, from = "top", align="right") {
+  showSuccessNotification: function (msg, from = 'top', align = 'right') {
     $.notify(
       {
-        icon: "tim-icons icon-bell-55",
+        icon: 'tim-icons icon-bell-55',
         message: msg,
       },
       {

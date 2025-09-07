@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -34,7 +34,6 @@
       <!-- END Sidebar Navigation -->
 
       <div class="main-panel">
-        
         <!-- Top Navbar -->
         @@include('navbar.html')
         <!-- End Top Navbar -->
@@ -43,19 +42,17 @@
         <div class="content">
           <!-- TABS Switch for Pages -->
           <div class="tab-content">
-            
             <!-- Dashboard page -->
-            <div
-              class="tab-pane fade show active"
-              id="dashboard"
-              role="tabpanel"
-            >
+            <div class="tab-pane fade show active" id="dashboard" role="tabpanel">
               <h2>Dashboard page</h2>
-              @@include('dashboardCardsInfo.html')
-              @@include('dashboardGraphic.html')
+              @@include('dashboardCardsInfo.html') @@include('dashboardGraphic.html')
               <div class="row">
-                <div class="col-xl-8 mb-4 col-xl-8 mb-4 d-flex align-items-stretch">@@include('funnelCard.html')</div>
-                <div class="col-xl-4 mb-4 col-xl-4 mb-4 d-flex align-items-stretch">@@include('topContactUsers.html')</div>
+                <div class="col-xl-8 mb-4 col-xl-8 mb-4 d-flex align-items-stretch">
+                  @@include('funnelCard.html')
+                </div>
+                <div class="col-xl-4 mb-4 col-xl-4 mb-4 d-flex align-items-stretch">
+                  @@include('topContactUsers.html')
+                </div>
               </div>
             </div>
             <!-- End Dashboard page -->
@@ -64,8 +61,7 @@
             <div class="tab-pane fade" id="contracts" role="tabpanel">
               <h2>Contracts page</h2>
 
-              @@include('contractForm.html')
-              @@include('calculationResults.html')
+              @@include('contractForm.html') @@include('calculationResults.html')
             </div>
             <!-- End Contracts page -->
 
@@ -93,7 +89,6 @@
               @@include('integrationsBox.html')
             </div>
             <!-- End Settings Page -->
-
           </div>
           <!-- End TABS Switch for Pages -->
         </div>
@@ -119,42 +114,38 @@
     <script>
       $(document).ready(function () {
         $().ready(function () {
-          $sidebar = $(".sidebar");
-          $navbar = $(".navbar");
-          $main_panel = $(".main-panel");
+          $sidebar = $('.sidebar');
+          $navbar = $('.navbar');
+          $main_panel = $('.main-panel');
 
-          $full_page = $(".full-page");
+          $full_page = $('.full-page');
 
-          $sidebar_responsive = $("body > .navbar-collapse");
+          $sidebar_responsive = $('body > .navbar-collapse');
           sidebar_mini_active = true;
           white_color = false;
 
           window_width = $(window).width();
 
-          fixed_plugin_open = $(
-            ".sidebar .sidebar-wrapper .nav li.active a p"
-          ).html();
+          fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
 
-          $(".switch-sidebar-mini input").on(
-            "switchChange.bootstrapSwitch",
+          $('.switch-sidebar-mini input').on(
+            'switchChange.bootstrapSwitch',
             function () {
               var $btn = $(this);
 
               if (sidebar_mini_active == true) {
-                $("body").removeClass("sidebar-mini");
+                $('body').removeClass('sidebar-mini');
                 sidebar_mini_active = false;
-                blackDashboard.showSidebarMessage(
-                  "Sidebar mini deactivated..."
-                );
+                blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
               } else {
-                $("body").addClass("sidebar-mini");
+                $('body').addClass('sidebar-mini');
                 sidebar_mini_active = true;
-                blackDashboard.showSidebarMessage("Sidebar mini activated...");
+                blackDashboard.showSidebarMessage('Sidebar mini activated...');
               }
 
               // we simulate the window Resize so the charts will get updated in realtime.
               var simulateWindowResize = setInterval(function () {
-                window.dispatchEvent(new Event("resize"));
+                window.dispatchEvent(new Event('resize'));
               }, 180);
 
               // we stop the simulation of Window Resize after the animations are completed
@@ -169,35 +160,40 @@
     <script>
       $(document).ready(function () {
         // Controlls example notification
-        utilities.showSuccessNotification("Welcome to <b>FleetIQ</b> - Dashboard !", "bottom","right");
+        utilities.showSuccessNotification(
+          'Welcome to <b>FleetIQ</b> - Dashboard !',
+          'bottom',
+          'right'
+        );
 
         // Dashboard page chart init
         demo.initDashboardPageCharts();
-        
+
         //Show notifications
-        $("#addToCampaignBtn").on("click", function() {
-            utilities.showSuccessNotification("<i class='tim-icons icon-volume-98'></i> <b>FleetIQ</b> - Contact added to Campaign !");
+        $('#addToCampaignBtn').on('click', function () {
+          utilities.showSuccessNotification(
+            "<i class='tim-icons icon-volume-98'></i> <b>FleetIQ</b> - Contact added to Campaign !"
+          );
         });
 
-        $("#sendBotNotificationBtn").on("click", function() {
-            utilities.showBotNotification("<i class='tim-icons icon-spaceship'></i> <b>FleetIQ</b> - Bot notification sent to the user !");
+        $('#sendBotNotificationBtn').on('click', function () {
+          utilities.showBotNotification(
+            "<i class='tim-icons icon-spaceship'></i> <b>FleetIQ</b> - Bot notification sent to the user !"
+          );
         });
-
-
 
         // Show/Hide Contract Form/Results
         // TO DO: Revisit on LIVE version
         // $("#contractForm").hide();
-        $("#calculationResults").hide();
-        $("#predictResultsBtn").on("click", function() {
-            $("#calculationResults").show();
-            $("#contractForm").hide();
+        $('#calculationResults').hide();
+        $('#predictResultsBtn').on('click', function () {
+          $('#calculationResults').show();
+          $('#contractForm').hide();
         });
-        $("#closeResults").on("click", function() {
-            $("#calculationResults").hide();
-            $("#contractForm").show();
+        $('#closeResults').on('click', function () {
+          $('#calculationResults').hide();
+          $('#contractForm').show();
         });
-
       });
     </script>
   </body>
