@@ -11,13 +11,13 @@ $.getJSON(getWebAppBackendUrl('/get_user_info'), function(data) {
 });
 
 
-$.getJSON(getWebAppBackendUrl('/get_product_ids'), function(data) {
+$.getJSON(getWebAppBackendUrl('/get_contract_ids'), function(data) {
      // Printout data to user info page
     let userData = data.data;
  // Clear any existing options
     $("#cfrm-select-contract_id").empty();
 
-    // Populate with product IDs
+    // Populate with Contract IDs
     $.each(userData, function(index, value) {
         $("#cfrm-select-contract_id").append(
             $("<option>", {
@@ -27,35 +27,62 @@ $.getJSON(getWebAppBackendUrl('/get_product_ids'), function(data) {
         );
     });
 
-    console.log("Product IDs loaded:", userData);
+    console.log("Contract IDs loaded:", userData);
 
 });
 
+/******************************/
+/** On Contract ID Selection **/
+/******************************/
 
 $("#cfrm-select-contract_id").on("change", function() {
       let selectedId = $(this).val();
 
       $.ajax({
-          url: getWebAppBackendUrl('/get_product_details'),
+          url: getWebAppBackendUrl('/get_contract_details'),
           method: "POST",
           contentType: "application/json",
-          data: JSON.stringify({ product_id: selectedId }),
+          data: JSON.stringify({ contract_id: selectedId }),
           success: function(response) {
               let res = typeof response === "string" ? JSON.parse(response) : response;
               if (res.status === "ok") {
-                  console.log(res.data);
-                  $("#detailCategory").text(res.data.Category);
-                  $("#detailRegion").text(res.data.Region);
-                  $("#detailInventory").text(res.data["InventoryLevel"]);
-                  $("#productDetails").show();
+                    // console.log(res.data);
+                    setContractFormData(res.data);
+                    $("#contractForm").show();
               } else {
-                  $("#productDetails").hide();
+                  $("#contractForm").hide();
+                  $("#contractForm").reset();
                   console.error("Error:", res.message);
+                  utilities.showErrorNotification("Error fetching contract details: " + res.message, "bottom", "right");
               }
           },
           error: function(xhr, status, error) {
-              $("#productDetails").hide();
+              $("#contractForm").hide();
+              $("#contractForm").reset();
+                utilities.showErrorNotification("Request failed: " + error, "bottom", "right");
               console.error("Request failed:", error);
           }
       });
   });
+
+// Set intreface to hidden initially
+$("#contractForm").hide();
+
+/******************************/
+/** Set Contract Information **/
+/******************************/
+
+function setContractFormData(data) {
+    $.each(data, function(key, value) {
+        // normalize key: lower case, replace spaces with underscores
+        const normalizedKey = key.toLowerCase().replace(/\s+/g, "_");
+        const fieldId = "#cfrm-" + normalizedKey;
+
+        if ($(fieldId).length) {
+            $(fieldId).val(value);
+        }
+        else {
+            console.log("No matching field in contactForm for key:", key);
+        }
+    });
+}

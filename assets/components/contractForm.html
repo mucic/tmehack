@@ -22,29 +22,13 @@
       </div>
 
       <div class="card-body">
-        <form>
-          <!-- Customer Info -->
-          <div class="row">
-            <div class="col-md-6 pr-md-1">
-              <div class="form-group">
-                <label for="cfrm-first_name">First Name</label>
-                <input type="text" class="form-control" id="cfrm-first_name" />
-              </div>
-            </div>
-            <div class="col-md-6 pl-md-1">
-              <div class="form-group">
-                <label for="cfrm-last_name">Last Name</label>
-                <input type="text" class="form-control" id="cfrm-last_name" />
-              </div>
-            </div>
-          </div>
-
+        <form id="contractForm">
           <!-- Loan Basics -->
           <div class="row">
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
                 <label for="cfrm-loan_contract_id">Loan Contract ID</label>
-                <input type="text" class="form-control" id="cfrm-loan_contract_id" />
+                <input type="text" class="form-control" id="cfrm-loan_contract_id" readonly/>
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
@@ -113,7 +97,7 @@
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-interest_rate">Interest Rate (%)</label>
-                <input type="number" class="form-control" id="cfrm-interest_rate" />
+                <input type="text" class="form-control" id="cfrm-interest_rate" />
               </div>
             </div>
           </div>
@@ -144,7 +128,7 @@
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-customer_id">Customer ID</label>
-                <input type="text" class="form-control" id="cfrm-customer_id" />
+                <input type="text" class="form-control" id="cfrm-customer_id" readonly/>
               </div>
             </div>
           </div>
