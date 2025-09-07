@@ -31,65 +31,52 @@ def get_projects():
 
 
 # ========================================================= #
-# Get Product IDs
+# Get Contract IDs
 # ========================================================= #
 
-@app.route('/get_product_ids')
-def get_product_ids():
+@app.route('/get_contract_ids')
+def get_contract_ids():
     # Load dataset
-    mydataset = dataiku.Dataset("retail_store_inventory")
+    mydataset = dataiku.Dataset("Contracts")
     df = mydataset.get_dataframe()
     
-    # Select first 20 Product IDs
-    # Adjust column name if it's 'ProductID', 'product_id', etc.
-    product_ids = df["Product ID"].head(20).tolist()
+    # Select first 20 Contract IDs
+    contract_ids = df["Contract ID"].head(20).tolist()
 
-    return json.dumps({"status": "ok", "data": product_ids})
+    return json.dumps({"status": "ok", "data": contract_ids})
 
 
 # ========================================================= #
-#   Get product details by Product ID
+#   Get product details by Contract ID
 # ========================================================= #
 
-@app.route('/get_product_details', methods=["POST"])
-def get_product_details():
+# Get all from dataset and filter in pandas for simplicity
+@app.route('/get_contract_details', methods=["POST"])
+def get_contract_details():
     req_data = request.get_json()
-    if not req_data or "product_id" not in req_data:
-        return jsonify(status="error", message="Missing product_id"), 400
+    if not req_data or "contract_id" not in req_data:
+        return jsonify(status="error", message="Missing contract_id"), 400
 
-    product_id = str(req_data["product_id"])
+    contract_id = str(req_data["contract_id"])
+    ds = dataiku.Dataset("Contracts")
 
-    # Specify only the columns we need for better performance
-    ds = dataiku.Dataset("retail_store_inventory")
-    try:
-        # Use fast path when available, falling back automatically
-        df = ds.get_fast_path_dataframe(
-            auto_fallback=True,
-            columns=["Product ID", "Category", "Region", "Inventory Level", "Price"]
-        )
-    except Exception:
-        # Fallback to regular get_dataframe if fast path fails
-        df = ds.get_dataframe(
-            columns=["Product ID", "Category", "Region", "Inventory Level", "Price"]
-        )
-
-    # Normalize column names: strip whitespace, just in case
+    # Load full dataset (safer than specifying columns until schema is verified)
+    df = ds.get_dataframe()
     df.rename(columns=lambda col: col.strip(), inplace=True)
 
-    # Filter — compare as strings to avoid type mismatch headaches
-    df["Product ID"] = df["Product ID"].astype(str)
-    matched = df[df["Product ID"] == product_id]
+    # Ensure consistent types for comparison
+    df["Contract ID"] = df["Contract ID"].astype(str)
+    matched = df[df["Contract ID"] == contract_id]
 
     if matched.empty:
-        return jsonify(status="error", message="Product ID not found"), 404
+        return jsonify(status="error", message="Contract ID not found"), 404
 
-    row = matched.iloc[0]
+    # Convert the first row into JSON-safe Python types
+    row = matched.iloc[0].to_dict()
     details = {
-        "Category": row["Category"],
-        "Region": row["Region"],
-        "InventoryLevel": int(row["Inventory Level"]), # Ensure it is an int!
-        "Price": row["Price"]
+        k: (v.item() if hasattr(v, "item") else v)
+        for k, v in row.items()
+        if k != "Contract ID"   # exclude ID from details payload
     }
 
     return jsonify(status="ok", data=details)
-
