@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -38,12 +38,7 @@
     </div>
     <ul class="nav" role="tablist">
       <li class="nav-item">
-        <a
-          class="nav-link active"
-          data-toggle="tab"
-          href="#dashboard"
-          role="tab"
-        >
+        <a class="nav-link active" data-toggle="tab" href="#dashboard" role="tab">
           <i class="tim-icons icon-chart-pie-36"></i>
           <p>Dashboard</p>
         </a>
@@ -54,7 +49,7 @@
           <p>Contracts</p>
         </a>
       </li>
-            <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#contact_details" role="tab">
           <i class="tim-icons icon-light-3"></i>
           <p>Contract details</p>
@@ -85,7 +80,6 @@
       <!-- END Sidebar Navigation -->
 
       <div class="main-panel">
-        
         <!-- Top Navbar -->
         <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
   <div class="container-fluid">
@@ -123,20 +117,14 @@
           </a>
           <ul class="dropdown-menu dropdown-navbar">
             <li class="nav-link">
-              <a href="javascript:void(0)" class="nav-item dropdown-item"
-                >Profile</a
-              >
+              <a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a>
             </li>
             <li class="nav-link">
-              <a href="javascript:void(0)" class="nav-item dropdown-item"
-                >Settings</a
-              >
+              <a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a>
             </li>
             <li class="dropdown-divider"></li>
             <li class="nav-link">
-              <a href="javascript:void(0)" class="nav-item dropdown-item"
-                >Log out</a
-              >
+              <a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a>
             </li>
           </ul>
         </li>
@@ -152,13 +140,8 @@
         <div class="content">
           <!-- TABS Switch for Pages -->
           <div class="tab-content">
-            
             <!-- Dashboard page -->
-            <div
-              class="tab-pane fade show active"
-              id="dashboard"
-              role="tabpanel"
-            >
+            <div class="tab-pane fade show active" id="dashboard" role="tabpanel">
               <h2>Dashboard page</h2>
               <div class="row">
   <!-- Revenue Uplift Card -->
@@ -167,8 +150,9 @@
       <div class="card-body d-flex flex-column justify-content-between">
         <div>
           <h4 class="card-title">Revenue Uplift</h4>
-          <h3 class="text-info mb-3" style="font-size: 2.5rem;">
-            $1.2M <i class="tim-icons icon-user-run mr-2"></i>
+          <h3 class="text-info mb-3" style="font-size: 2.5rem">
+            $1.2M
+            <i class="tim-icons icon-user-run mr-2"></i>
           </h3>
         </div>
         <p class="card-text">Next 90 days</p>
@@ -182,8 +166,9 @@
       <div class="card-body d-flex flex-column justify-content-between">
         <div>
           <h4 class="card-title">Renewal Rate</h4>
-          <h3 class="text-success mb-3" style="font-size: 2.5rem;">
-            72% <i class="tim-icons icon-tap-02 mr-2"></i>
+          <h3 class="text-success mb-3" style="font-size: 2.5rem">
+            72%
+            <i class="tim-icons icon-tap-02 mr-2"></i>
           </h3>
         </div>
         <p class="card-text">Rolling 12 mo</p>
@@ -197,8 +182,9 @@
       <div class="card-body d-flex flex-column justify-content-between">
         <div>
           <h4 class="card-title">Upgrade Rate</h4>
-          <h3 class="text-warning mb-3" style="font-size: 2.5rem;">
-            28% <i class="tim-icons icon-send mr-2"></i>
+          <h3 class="text-warning mb-3" style="font-size: 2.5rem">
+            28%
+            <i class="tim-icons icon-send mr-2"></i>
           </h3>
         </div>
         <p class="card-text">Campaign-driven</p>
@@ -212,8 +198,9 @@
       <div class="card-body d-flex flex-column justify-content-between">
         <div>
           <h4 class="card-title">Active Contracts</h4>
-          <h3 class="text-danger mb-3" style="font-size: 2.5rem;">
-            880 <i class="tim-icons icon-single-02 mr-2"></i>
+          <h3 class="text-danger mb-3" style="font-size: 2.5rem">
+            880
+            <i class="tim-icons icon-single-02 mr-2"></i>
           </h3>
         </div>
         <p class="card-text">Across CLC & VLV</p>
@@ -221,53 +208,120 @@
     </div>
   </div>
 </div>
-
-              <div class="row">
-          <div class="col-12">
-            <div class="card card-chart">
-              <div class="card-header ">
-                <div class="row">
-                  <div class="col-sm-6 text-left">
-                    <h5 class="card-category">Engagement Activity</h5>
-                    <h2 class="card-title">Performance</h2>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-                      <label class="btn btn-sm btn-primary btn-simple active" id="0">
-                        <input type="radio" name="options" checked="">
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Accounts</span>
-                        <span class="d-block d-sm-none">
-                          <i class="tim-icons icon-single-02"></i>
-                        </span>
-                      </label>
-                      <label class="btn btn-sm btn-primary btn-simple" id="1">
-                        <input type="radio" class="d-none d-sm-none" name="options">
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Renewals</span>
-                        <span class="d-block d-sm-none">
-                          <i class="tim-icons icon-gift-2"></i>
-                        </span>
-                      </label>
-                      <label class="btn btn-sm btn-primary btn-simple" id="2">
-                        <input type="radio" class="d-none" name="options">
-                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Upgrades</span>
-                        <span class="d-block d-sm-none">
-                          <i class="tim-icons icon-tap-02"></i>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="chart-area"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-                  <canvas id="chartBig1" width="1882" height="440" style="display: block; height: 220px; width: 941px;" class="chartjs-render-monitor"></canvas>
-                </div>
-              </div>
+ <div class="row">
+  <div class="col-12">
+    <div class="card card-chart">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-sm-6 text-left">
+            <h5 class="card-category">Engagement Activity</h5>
+            <h2 class="card-title">Performance</h2>
+          </div>
+          <div class="col-sm-6">
+            <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+              <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                <input type="radio" name="options" checked="" />
+                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block"></span>
+                  Accounts
+                </span>
+                <span class="d-block d-sm-none">
+                  <i class="tim-icons icon-single-02"></i>
+                </span>
+              </label>
+              <label class="btn btn-sm btn-primary btn-simple" id="1">
+                <input type="radio" class="d-none d-sm-none" name="options" />
+                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                  Renewals
+                </span>
+                <span class="d-block d-sm-none">
+                  <i class="tim-icons icon-gift-2"></i>
+                </span>
+              </label>
+              <label class="btn btn-sm btn-primary btn-simple" id="2">
+                <input type="radio" class="d-none" name="options" />
+                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                  Upgrades
+                </span>
+                <span class="d-block d-sm-none">
+                  <i class="tim-icons icon-tap-02"></i>
+                </span>
+              </label>
             </div>
           </div>
         </div>
+      </div>
+      <div class="card-body">
+        <div class="chart-area">
+          <div
+            class="chartjs-size-monitor"
+            style="
+              position: absolute;
+              inset: 0px;
+              overflow: hidden;
+              pointer-events: none;
+              visibility: hidden;
+              z-index: -1;
+            "
+          >
+            <div
+              class="chartjs-size-monitor-expand"
+              style="
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                overflow: hidden;
+                pointer-events: none;
+                visibility: hidden;
+                z-index: -1;
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  width: 1000000px;
+                  height: 1000000px;
+                  left: 0;
+                  top: 0;
+                "
+              ></div>
+            </div>
+            <div
+              class="chartjs-size-monitor-shrink"
+              style="
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                overflow: hidden;
+                pointer-events: none;
+                visibility: hidden;
+                z-index: -1;
+              "
+            >
+              <div
+                style="position: absolute; width: 200%; height: 200%; left: 0; top: 0"
+              ></div>
+            </div>
+          </div>
+          <canvas
+            id="chartBig1"
+            width="1882"
+            height="440"
+            style="display: block; height: 220px; width: 941px"
+            class="chartjs-render-monitor"
+          ></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
               <div class="row">
-                <div class="col-xl-8 mb-4 col-xl-8 mb-4 d-flex align-items-stretch"><!-- Upgrade Opportunities Funnel -->
+                <div class="col-xl-8 mb-4 col-xl-8 mb-4 d-flex align-items-stretch">
+                  <!-- Upgrade Opportunities Funnel -->
 <div class="card shadow">
   <div class="card-body d-flex flex-column">
     <h4 class="mb-4">Upgrade Opportunities Funnel</h4>
@@ -308,8 +362,10 @@
 
   <!-- End Customer List -->
 </div>
-</div>
-                <div class="col-xl-4 mb-4 col-xl-4 mb-4 d-flex align-items-stretch"><div class="card">
+
+                </div>
+                <div class="col-xl-4 mb-4 col-xl-4 mb-4 d-flex align-items-stretch">
+                  <div class="card">
   <div class="card-header">
     <h4 class="card-title">Top 5 Customers to Contact Today</h4>
   </div>
@@ -360,7 +416,8 @@
     </div>
   </div>
 </div>
-</div>
+
+                </div>
               </div>
             </div>
             <!-- End Dashboard page -->
@@ -399,7 +456,12 @@
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
                 <label for="cfrm-loan_contract_id">Loan Contract ID</label>
-                <input type="text" class="form-control" id="cfrm-loan_contract_id" readonly/>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cfrm-loan_contract_id"
+                  readonly
+                />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
@@ -414,14 +476,24 @@
           <div class="row">
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
-                <label for="cfrm-campaign_engagement_score">Campaign Engagement Score</label>
-                <input type="number" class="form-control" id="cfrm-campaign_engagement_score" />
+                <label for="cfrm-campaign_engagement_score"></label>
+                  Campaign Engagement Score
+                </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-campaign_engagement_score"
+                />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-channel_responsiveness">Channel Responsiveness</label>
-                <input type="text" class="form-control" id="cfrm-channel_responsiveness" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cfrm-channel_responsiveness"
+                />
               </div>
             </div>
           </div>
@@ -430,8 +502,14 @@
           <div class="row">
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
-                <label for="cfrm-credit_history_length">Credit History Length (Years)</label>
-                <input type="number" class="form-control" id="cfrm-credit_history_length" />
+                <label for="cfrm-credit_history_length">
+                  Credit History Length (Years)
+                </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-credit_history_length"
+                />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
@@ -493,13 +571,22 @@
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
                 <label for="cfrm-last_interaction_date">Last Interaction Date</label>
-                <input type="date" class="form-control" id="cfrm-last_interaction_date" />
+                <input
+                  type="date"
+                  class="form-control"
+                  id="cfrm-last_interaction_date"
+                />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-customer_id">Customer ID</label>
-                <input type="text" class="form-control" id="cfrm-customer_id" readonly/>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cfrm-customer_id"
+                  readonly
+                />
               </div>
             </div>
           </div>
@@ -551,17 +638,25 @@
     <div class="card card-user">
       <div class="card-body text-center">
         <a href="javascript:void(0)">
-          <img src="../assets/img/raw.png" alt="Customer Image" class="img-fluid rounded" />
+          <img
+            src="../assets/img/raw.png"
+            alt="Customer Image"
+            class="img-fluid rounded"
+          />
         </a>
       </div>
     </div>
   </div>
 </div>
-
-              <div class="row" id="calculationResults">
+ <div class="row" id="calculationResults">
   <!-- Close button -->
   <div class="col-12 text-right">
-    <button type="button" id="closeResults" class="close text-white py-3 px-3" aria-label="Close">
+    <button
+      type="button"
+      id="closeResults"
+      class="close text-white py-3 px-3"
+      aria-label="Close"
+    >
       <i class="tim-icons icon-simple-remove"></i>
     </button>
   </div>
@@ -575,27 +670,32 @@
       <div class="card-body">
         <ul class="list-group list-group-flush bg-dark text-white">
           <li class="list-group-item bg-dark text-white d-flex justify-content-between">
-            <span>Contract ID:</span> <strong id="cr-contract_id">LC0001</strong>
+            <span>Contract ID:</span>
+            <strong id="cr-contract_id">LC0001</strong>
           </li>
           <li class="list-group-item bg-dark text-white d-flex justify-content-between">
-            <span>Estimated Business Value:</span> 
+            <span>Estimated Business Value:</span>
             <span id="cr-estimated_business_value" class="display-4">$4.138,05</span>
           </li>
           <li class="list-group-item bg-dark text-white">
             <h6 class="mt-3">Summary</h6>
             <p id="cr-summary">
-              The customer has a high credit score (788), no missing payments and a high 
-              engagement score. The loan term is 36 months, and 67% of the term has elapsed, 
-              making this an ideal time for an upgrade.
+              The customer has a high credit score (788), no missing payments and a high
+              engagement score. The loan term is 36 months, and 67% of the term has
+              elapsed, making this an ideal time for an upgrade.
             </p>
           </li>
           <li class="list-group-item bg-dark text-white">
             <h6 class="mt-3">Justification</h6>
-            <p id="cr-justification">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p id="cr-justification">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
           </li>
           <li class="list-group-item bg-dark text-white">
             <h6 class="mt-3">Business Value Calculation</h6>
-            <p id="cr-business_value_calculation">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p id="cr-business_value_calculation">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
           </li>
         </ul>
       </div>
@@ -607,14 +707,15 @@
     <div class="card bg-dark text-white mb-4">
       <div class="card-body">
         <h4 class="card-title">AI Recommendation</h4>
-        
+
         <p>
-          <strong>Readiness score:</strong> 
+          <strong>Readiness score:</strong>
           <span id="cr-readiness_score" class="badge badge-success w-50">92%</span>
         </p>
-        
+
         <p>
-          <strong>Recommended model:</strong><br>
+          <strong>Recommended model:</strong>
+          <br />
           <span id="cr-recommended_model">Lexus NX Plug-in Hybrid</span>
         </p>
 
@@ -622,15 +723,26 @@
           <strong>Loan Term Progress:</strong>
         </p>
         <div class="progress mb-3">
-          <div id="loanTermProgressBar"class="progress-bar bg-info" role="progressbar" style="width: 67%;" 
-               aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
+          <div
+            id="loanTermProgressBar"
+            class="progress-bar bg-info"
+            role="progressbar"
+            style="width: 67%"
+            aria-valuenow="67"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
             67%
           </div>
         </div>
       </div>
       <div class="card-footer d-flex justify-content-between">
-          <button id="addToCampaignBtn" class="btn btn-primary btn-sm mx-1">Add to Campaign</button>
-        <button id="sendBotNotificationBtn" class="btn btn-primary btn-sm">Send Bot Notification</button>
+        <button id="addToCampaignBtn" class="btn btn-primary btn-sm mx-1">
+          Add to Campaign
+        </button>
+        <button id="sendBotNotificationBtn" class="btn btn-primary btn-sm">
+          Send Bot Notification
+        </button>
       </div>
     </div>
   </div>
@@ -647,7 +759,7 @@
             <div class="tab-pane fade" id="telematix" role="tabpanel">
               <h2>Telematix page</h2>
               <div class="col-md-12">
-  <div class="card ">
+  <div class="card">
     <div class="card-header">
       <h4 class="card-title">Telematix Info</h4>
     </div>
@@ -709,11 +821,7 @@
           <div class="block block-three"></div>
           <div class="block block-four"></div>
           <a href="javascript:void(0)">
-            <img
-              class="avatar"
-              src="../assets/img/avatar_user.jpg"
-              alt="user img"
-            />
+            <img class="avatar" src="../assets/img/avatar_user.jpg" alt="user img" />
             <h5 id="username" class="title">[data space]</h5>
           </a>
           <p class="description" id="bedge-user_profile">[data space]</p>
@@ -778,7 +886,6 @@
 
             </div>
             <!-- End Settings Page -->
-
           </div>
           <!-- End TABS Switch for Pages -->
         </div>
@@ -804,42 +911,38 @@
     <script>
       $(document).ready(function () {
         $().ready(function () {
-          $sidebar = $(".sidebar");
-          $navbar = $(".navbar");
-          $main_panel = $(".main-panel");
+          $sidebar = $('.sidebar');
+          $navbar = $('.navbar');
+          $main_panel = $('.main-panel');
 
-          $full_page = $(".full-page");
+          $full_page = $('.full-page');
 
-          $sidebar_responsive = $("body > .navbar-collapse");
+          $sidebar_responsive = $('body > .navbar-collapse');
           sidebar_mini_active = true;
           white_color = false;
 
           window_width = $(window).width();
 
-          fixed_plugin_open = $(
-            ".sidebar .sidebar-wrapper .nav li.active a p"
-          ).html();
+          fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
 
-          $(".switch-sidebar-mini input").on(
-            "switchChange.bootstrapSwitch",
+          $('.switch-sidebar-mini input').on(
+            'switchChange.bootstrapSwitch',
             function () {
               var $btn = $(this);
 
               if (sidebar_mini_active == true) {
-                $("body").removeClass("sidebar-mini");
+                $('body').removeClass('sidebar-mini');
                 sidebar_mini_active = false;
-                blackDashboard.showSidebarMessage(
-                  "Sidebar mini deactivated..."
-                );
+                blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
               } else {
-                $("body").addClass("sidebar-mini");
+                $('body').addClass('sidebar-mini');
                 sidebar_mini_active = true;
-                blackDashboard.showSidebarMessage("Sidebar mini activated...");
+                blackDashboard.showSidebarMessage('Sidebar mini activated...');
               }
 
               // we simulate the window Resize so the charts will get updated in realtime.
               var simulateWindowResize = setInterval(function () {
-                window.dispatchEvent(new Event("resize"));
+                window.dispatchEvent(new Event('resize'));
               }, 180);
 
               // we stop the simulation of Window Resize after the animations are completed
@@ -854,35 +957,40 @@
     <script>
       $(document).ready(function () {
         // Controlls example notification
-        utilities.showSuccessNotification("Welcome to <b>FleetIQ</b> - Dashboard !", "bottom","right");
+        utilities.showSuccessNotification(
+          'Welcome to <b>FleetIQ</b> - Dashboard !',
+          'bottom',
+          'right'
+        );
 
         // Dashboard page chart init
         demo.initDashboardPageCharts();
-        
+
         //Show notifications
-        $("#addToCampaignBtn").on("click", function() {
-            utilities.showSuccessNotification("<i class='tim-icons icon-volume-98'></i> <b>FleetIQ</b> - Contact added to Campaign !");
+        $('#addToCampaignBtn').on('click', function () {
+          utilities.showSuccessNotification(
+            "<i class='tim-icons icon-volume-98'></i> <b>FleetIQ</b> - Contact added to Campaign !"
+          );
         });
 
-        $("#sendBotNotificationBtn").on("click", function() {
-            utilities.showBotNotification("<i class='tim-icons icon-spaceship'></i> <b>FleetIQ</b> - Bot notification sent to the user !");
+        $('#sendBotNotificationBtn').on('click', function () {
+          utilities.showBotNotification(
+            "<i class='tim-icons icon-spaceship'></i> <b>FleetIQ</b> - Bot notification sent to the user !"
+          );
         });
-
-
 
         // Show/Hide Contract Form/Results
         // TO DO: Revisit on LIVE version
         // $("#contractForm").hide();
-        $("#calculationResults").hide();
-        $("#predictResultsBtn").on("click", function() {
-            $("#calculationResults").show();
-            $("#contractForm").hide();
+        $('#calculationResults').hide();
+        $('#predictResultsBtn').on('click', function () {
+          $('#calculationResults').show();
+          $('#contractForm').hide();
         });
-        $("#closeResults").on("click", function() {
-            $("#calculationResults").hide();
-            $("#contractForm").show();
+        $('#closeResults').on('click', function () {
+          $('#calculationResults').hide();
+          $('#contractForm').show();
         });
-
       });
     </script>
   </body>
