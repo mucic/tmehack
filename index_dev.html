@@ -439,7 +439,11 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="cfrm-select-contract_id">Select Contract ID</label>
-            <select class="form-control" id="cfrm-select-contract_id">
+            <select
+              class="form-control"
+              id="cfrm-select-contract_id"
+              name="contract_id"
+            >
               <!-- Options will be injected here -->
             </select>
           </div>
@@ -451,20 +455,30 @@
           <!-- Contract Info -->
           <div class="section-header mb-2">
             <h5 class="title">Contract Information</h5>
-            <hr class="bg-light" />
+            <hr class="bg-primary" />
           </div>
 
           <div class="row">
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
                 <label for="cfrm-contract_type">Contract Type</label>
-                <input type="text" class="form-control" id="cfrm-contract_type" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cfrm-contract_type"
+                  name="contract_type"
+                />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-contract_status">Contract Status</label>
-                <input type="text" class="form-control" id="cfrm-contract_status" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cfrm-contract_status"
+                  name="contract_status"
+                />
               </div>
             </div>
           </div>
@@ -477,13 +491,19 @@
                   type="number"
                   class="form-control"
                   id="cfrm-contract_term_months"
+                  name="contract_term_months"
                 />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-contract_start_date">Contract Start Date</label>
-                <input type="date" class="form-control" id="cfrm-contract_start_date" />
+                <input
+                  type="date"
+                  class="form-control"
+                  id="cfrm-contract_start_date"
+                  name="contract_start_date"
+                />
               </div>
             </div>
           </div>
@@ -491,7 +511,7 @@
           <!-- Customer -->
           <div class="section-header mt-4 mb-2">
             <h5 class="title">Customer Profile</h5>
-            <hr class="bg-light" />
+            <hr class="bg-primary" />
           </div>
 
           <div class="row">
@@ -502,6 +522,7 @@
                   type="text"
                   class="form-control"
                   id="cfrm-customer_id"
+                  name="customer_id"
                   readonly
                 />
               </div>
@@ -509,7 +530,7 @@
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-age">Age</label>
-                <input type="number" class="form-control" id="cfrm-age" />
+                <input type="number" class="form-control" id="cfrm-age" name="age" />
               </div>
             </div>
           </div>
@@ -518,13 +539,23 @@
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
                 <label for="cfrm-employment_status">Employment Status</label>
-                <input type="text" class="form-control" id="cfrm-employment_status" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cfrm-employment_status"
+                  name="employment_status"
+                />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-income_level_eur">Income Level (€)</label>
-                <input type="number" class="form-control" id="cfrm-income_level_eur" />
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-income_level_eur"
+                  name="income_level_eur"
+                />
               </div>
             </div>
           </div>
@@ -532,20 +563,30 @@
           <!-- Loan -->
           <div class="section-header mt-4 mb-2">
             <h5 class="title">Loan Details</h5>
-            <hr class="bg-light" />
+            <hr class="bg-primary" />
           </div>
 
           <div class="row">
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
                 <label for="cfrm-loan_type">Loan Type</label>
-                <input type="text" class="form-control" id="cfrm-loan_type" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cfrm-loan_type"
+                  name="loan_type"
+                />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-loan_amount_eur">Loan Amount (€)</label>
-                <input type="number" class="form-control" id="cfrm-loan_amount_eur" />
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-loan_amount_eur"
+                  name="loan_amount_eur"
+                />
               </div>
             </div>
           </div>
@@ -554,13 +595,23 @@
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
                 <label for="cfrm-loan_term_months">Loan Term (Months)</label>
-                <input type="number" class="form-control" id="cfrm-loan_term_months" />
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-loan_term_months"
+                  name="loan_term_months"
+                />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-interest_rate">Interest Rate (%)</label>
-                <input type="text" class="form-control" id="cfrm-interest_rate" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cfrm-interest_rate"
+                  name="interest_rate"
+                />
               </div>
             </div>
           </div>
@@ -568,20 +619,30 @@
           <!-- Dates -->
           <div class="section-header mt-4 mb-2">
             <h5 class="title">Dates</h5>
-            <hr class="bg-light" />
+            <hr class="bg-primary" />
           </div>
 
           <div class="row">
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
                 <label for="cfrm-date_of_loan">Date of Loan</label>
-                <input type="date" class="form-control" id="cfrm-date_of_loan" />
+                <input
+                  type="date"
+                  class="form-control"
+                  id="cfrm-date_of_loan"
+                  name="date_of_loan"
+                />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-date_of_loan_expiry">Date of Loan Expiry</label>
-                <input type="date" class="form-control" id="cfrm-date_of_loan_expiry" />
+                <input
+                  type="date"
+                  class="form-control"
+                  id="cfrm-date_of_loan_expiry"
+                  name="date_of_loan_expiry"
+                />
               </div>
             </div>
           </div>
@@ -589,14 +650,19 @@
           <!-- Credit -->
           <div class="section-header mt-4 mb-2">
             <h5 class="title">Credit Information</h5>
-            <hr class="bg-light" />
+            <hr class="bg-primary" />
           </div>
 
           <div class="row">
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
                 <label for="cfrm-credit_score">Credit Score</label>
-                <input type="number" class="form-control" id="cfrm-credit_score" />
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-credit_score"
+                  name="credit_score"
+                />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
@@ -608,6 +674,7 @@
                   type="number"
                   class="form-control"
                   id="cfrm-credit_history_length_years"
+                  name="credit_history_length_years"
                 />
               </div>
             </div>
@@ -621,6 +688,7 @@
                   type="number"
                   class="form-control"
                   id="cfrm-previous_loan_defaults"
+                  name="previous_loan_defaults"
                 />
               </div>
             </div>
@@ -629,20 +697,30 @@
           <!-- Vehicle -->
           <div class="section-header mt-4 mb-2">
             <h5 class="title">Vehicle Information</h5>
-            <hr class="bg-light" />
+            <hr class="bg-primary" />
           </div>
 
           <div class="row">
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
                 <label for="cfrm-vehicle_age_years">Vehicle Age (Years)</label>
-                <input type="number" class="form-control" id="cfrm-vehicle_age_years" />
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-vehicle_age_years"
+                  name="vehicle_age_years"
+                />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-vehicle_value_eur">Vehicle Value (€)</label>
-                <input type="number" class="form-control" id="cfrm-vehicle_value_eur" />
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-vehicle_value_eur"
+                  name="vehicle_value_eur"
+                />
               </div>
             </div>
           </div>
@@ -650,20 +728,30 @@
           <!-- Risk -->
           <div class="section-header mt-4 mb-2">
             <h5 class="title">Risk & Payments</h5>
-            <hr class="bg-light" />
+            <hr class="bg-primary" />
           </div>
 
           <div class="row">
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
                 <label for="cfrm-days_past_due">Days Past Due</label>
-                <input type="number" class="form-control" id="cfrm-days_past_due" />
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-days_past_due"
+                  name="days_past_due"
+                />
               </div>
             </div>
             <div class="col-md-6 pl-md-1">
               <div class="form-group">
                 <label for="cfrm-missed_payments">Missed Payments</label>
-                <input type="number" class="form-control" id="cfrm-missed_payments" />
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-missed_payments"
+                  name="missed_payments"
+                />
               </div>
             </div>
           </div>
@@ -671,7 +759,7 @@
           <!-- Engagement -->
           <div class="section-header mt-4 mb-2">
             <h5 class="title">Engagement</h5>
-            <hr class="bg-light" />
+            <hr class="bg-primary" />
           </div>
 
           <div class="row">
@@ -684,6 +772,7 @@
                   type="number"
                   class="form-control"
                   id="cfrm-campaign_engagement_score"
+                  name="campaign_engagement_score"
                 />
               </div>
             </div>
@@ -694,6 +783,7 @@
                   type="text"
                   class="form-control"
                   id="cfrm-channel_responsiveness"
+                  name="channel_responsiveness"
                 />
               </div>
             </div>
@@ -707,6 +797,7 @@
                   type="date"
                   class="form-control"
                   id="cfrm-last_interaction_date"
+                  name="last_interaction_date"
                 />
               </div>
             </div>
@@ -1191,7 +1282,7 @@
           $('#calculationResults').hide();
           $('#contractForm').show();
         });
-        /*************************/
+        // /*************************/
       });
     </script>
   </body>

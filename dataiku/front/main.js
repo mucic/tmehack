@@ -79,6 +79,56 @@ $('#cfrm-select-contract_id').on('change', function () {
 /**************************************************/
 /** On Predict Optimal Trade-in Time Button Click**/
 /**************************************************/
+$('#predictResultsBtn').on('click', function (e) {
+  e.preventDefault(); // stop page reload
+
+  // Collect form data
+  let formData = {};
+  $('#contractForm')
+    .serializeArray()
+    .forEach(function (item) {
+      formData[item.name] = item.value;
+    });
+
+  // Build request payload
+  let payload = {
+    contract_id: $('#cfrm-select-contract_id').val(), // top-level contract_id
+    contract_data: formData, // full form data nested
+  };
+
+  $.ajax({
+    url: getWebAppBackendUrl('/predict_internal'),
+    method: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(payload),
+    beforeSend: function () {
+      console.log('Sending query...', payload);
+    },
+    success: function (response) {
+      let res = typeof response === 'string' ? JSON.parse(response) : response;
+
+      if (res.status === 'ok') {
+        console.log('Query success:', res.data);
+        utilities.showSuccessNotification('Query successful!', 'bottom', 'right');
+      } else {
+        console.error('Error:', res.message);
+        utilities.showErrorNotification(
+          'Error during query: ' + res.message,
+          'bottom',
+          'right'
+        );
+      }
+    },
+    error: function (xhr, status, err) {
+      console.error('AJAX error:', err);
+      utilities.showErrorNotification(
+        'Unexpected error while sending query.',
+        'bottom',
+        'right'
+      );
+    },
+  });
+});
 
 /**********************/
 /** Helper functions **/

@@ -39,7 +39,7 @@ def get_projects():
 @app.route('/get_contract_ids')
 def get_contract_ids():
     # Load dataset
-    mydataset = dataiku.Dataset("Contracts")
+    mydataset = dataiku.Dataset("Contracts_prepared")
     df = mydataset.get_dataframe()
     
     # Select first 20 Contract IDs
@@ -60,7 +60,7 @@ def get_contract_details():
         return jsonify(status="error", message="Missing contract_id"), 400
 
     contract_id = str(req_data["contract_id"])
-    ds = dataiku.Dataset("Contracts")
+    ds = dataiku.Dataset("Contracts_prepared")
 
     # Load full dataset (safer than specifying columns until schema is verified)
     df = ds.get_dataframe()
@@ -68,7 +68,7 @@ def get_contract_details():
 
     # Ensure consistent types for comparison
     df["Contract ID"] = df["Contract_ID"].astype(str)
-    matched = df[df["Contract ID"] == contract_id]
+    matched = df[df["Contract_ID"] == contract_id]
 
     if matched.empty:
         return jsonify(status="error", message="Contract ID not found"), 404
