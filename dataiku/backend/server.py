@@ -41,7 +41,7 @@ def get_contract_ids():
     df = mydataset.get_dataframe()
     
     # Select first 20 Contract IDs
-    contract_ids = df["Contract ID"].head(20).tolist()
+    contract_ids = df["Contract_ID"].head(20).tolist()
 
     return json.dumps({"status": "ok", "data": contract_ids})
 
@@ -65,7 +65,7 @@ def get_contract_details():
     df.rename(columns=lambda col: col.strip(), inplace=True)
 
     # Ensure consistent types for comparison
-    df["Contract ID"] = df["Contract ID"].astype(str)
+    df["Contract ID"] = df["Contract_ID"].astype(str)
     matched = df[df["Contract ID"] == contract_id]
 
     if matched.empty:
@@ -76,7 +76,7 @@ def get_contract_details():
     details = {
         k: (v.item() if hasattr(v, "item") else v)
         for k, v in row.items()
-        if k != "Contract ID"   # exclude ID from details payload
+        if k != "Contract_ID"   # exclude ID from details payload
     }
 
     return jsonify(status="ok", data=details)
