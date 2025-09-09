@@ -19,6 +19,22 @@ utilities = {
       }
     );
   },
+  showCampaignNotification: function (msg, from = 'top', align = 'right') {
+    $.notify(
+      {
+        icon: 'tim-icons icon-volume-98',
+        message: msg,
+      },
+      {
+        type: type[2],
+        timer: 5000,
+        placement: {
+          from: from,
+          align: align,
+        },
+      }
+    );
+  },
   showBotNotification: function (msg, from = 'top', align = 'right') {
     $.notify(
       {
@@ -43,7 +59,7 @@ utilities = {
       },
       {
         type: type[4],
-        timer: 5000,
+        timer: 500,
         placement: {
           from: from,
           align: align,
@@ -51,7 +67,7 @@ utilities = {
       }
     );
   },
-  showSuccessNotification: function (msg, from = 'top', align = 'right') {
+  showSuccessNotification: function (msg, from = 'bottom', align = 'right') {
     $.notify(
       {
         icon: 'tim-icons icon-bell-55',
@@ -59,7 +75,7 @@ utilities = {
       },
       {
         type: type[2],
-        timer: 5000,
+        timer: 500,
         placement: {
           from: from,
           align: align,

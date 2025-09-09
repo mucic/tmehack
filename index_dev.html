@@ -49,16 +49,17 @@
           <p>Contracts</p>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#contact_details" role="tab">
-          <i class="tim-icons icon-light-3"></i>
-          <p>Contract details</p>
-        </a>
-      </li>
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#telematix" role="tab">
           <i class="tim-icons icon-chart-bar-32"></i>
           <p>Telematix</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#campaigns" role="tab">
+          <i class="tim-icons icon-volume-98"></i>
+          <p>Campaigns</p>
         </a>
       </li>
       <li class="nav-item">
@@ -751,10 +752,6 @@
             </div>
             <!-- End Contracts page -->
 
-            <div class="tab-pane fade" id="contact_details" role="tabpanel">
-              <h2>Contact details</h2>
-            </div>
-
             <!-- Telematix Page -->
             <div class="tab-pane fade" id="telematix" role="tabpanel">
               <h2>Telematix page</h2>
@@ -806,6 +803,84 @@
 
             </div>
             <!-- End Telematix Page -->
+
+            <div class="tab-pane fade" id="campaigns" role="tabpanel">
+              <h2>Campaigns page</h2>
+              <div class="container-fluid py-4">
+  <!-- Header -->
+  <div class="card mb-4">
+    <div class="card-body d-flex justify-content-between align-items-center">
+      <h5 class="card-title mb-0">Campaigns</h5>
+      <a
+        href="https://login.salesforce.com/?locale=eu"
+        target="_blank"
+        type="button"
+        class="btn btn-primary"
+      >
+        + New Campaign
+      </a>
+    </div>
+  </div>
+
+  <!-- Campaigns Grid -->
+  <div class="row">
+    <!-- Campaign Card 1 -->
+    <div class="col-lg-6 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Early Upgrade Push – SUV Owners</h5>
+          <div class="mb-3 campaign-status">
+            <span class="badge badge-success status-label">Running</span>
+            <span class="badge badge-secondary">Sent: 350</span>
+            <span class="badge badge-secondary">Opened: 220</span>
+            <span class="badge badge-secondary">Conversions: 40</span>
+          </div>
+          <div class="btn-group" role="group">
+            <a
+              href="https://login.salesforce.com/?locale=eu"
+              target="_blank"
+              class="btn btn-primary btn-sm"
+            >
+              View Details
+            </a>
+            <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm toggle-state">
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campaign Card 2 -->
+    <div class="col-lg-6 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Lease Renewal Reminder – 2025 Expiries</h5>
+          <div class="mb-3 campaign-status">
+            <span class="badge badge-secondary status-label">Scheduled</span>
+            <span class="badge badge-secondary">Audience: 1,200</span>
+          </div>
+          <div class="btn-group" role="group">
+            <a
+              href="https://login.salesforce.com/?locale=eu"
+              target="_blank"
+              class="btn btn-primary btn-sm"
+            >
+              View Details
+            </a>
+            <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm toggle-state">
+              Start
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            </div>
 
             <!-- User Profile Page -->
             <div class="tab-pane fade" id="user_profile" role="tabpanel">
@@ -905,7 +980,7 @@
     <script src="../assets/js/plugins/bootstrap-notify.js"></script>
     <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script>
-    <!-- Black Dashboard DEMO methods, don't include it in your project! -->
+    <!-- Black Dashboard DEMO methods, don't include it in final project! -->
     <script src="../assets/demo/demo.js"></script>
     <script src="../assets/js/utilities.js"></script>
     <script>
@@ -956,7 +1031,11 @@
     </script>
     <script>
       $(document).ready(function () {
-        // Controlls example notification
+        /*****************************/
+        /** Base setup of the Theme **/
+        /*****************************/
+
+        // Welcome notification
         utilities.showSuccessNotification(
           'Welcome to <b>FleetIQ</b> - Dashboard !',
           'bottom',
@@ -966,21 +1045,54 @@
         // Dashboard page chart init
         demo.initDashboardPageCharts();
 
-        //Show notifications
+        // Trigger Notification - Buttons
+        // Add to Campaign button
         $('#addToCampaignBtn').on('click', function () {
-          utilities.showSuccessNotification(
+          utilities.showCampaignNotification(
             "<i class='tim-icons icon-volume-98'></i> <b>FleetIQ</b> - Contact added to Campaign !"
           );
         });
 
+        // Send Bot Notification button
         $('#sendBotNotificationBtn').on('click', function () {
           utilities.showBotNotification(
             "<i class='tim-icons icon-spaceship'></i> <b>FleetIQ</b> - Bot notification sent to the user !"
           );
         });
 
-        // Show/Hide Contract Form/Results
-        // TO DO: Revisit on LIVE version
+        /*************************/
+        /** Campaign page logic **/
+        /*************************/
+
+        $('.toggle-state').on('click', function () {
+          var $btn = $(this);
+          var $card = $btn.closest('.card');
+          var $status = $card.find('.status-label');
+
+          var current = $status.text().trim();
+
+          if (current === 'Running') {
+            // Pause campaign
+            $status
+              .text('Paused')
+              .removeClass('badge-success')
+              .addClass('badge-warning');
+            utilities.showSuccessNotification('Campaign is paused!');
+            $btn.text('Start');
+          } else if (current === 'Paused' || current === 'Scheduled') {
+            // Start campaign
+            $status
+              .text('Running')
+              .removeClass('badge-warning badge-secondary')
+              .addClass('badge-success');
+            $btn.text('Pause');
+            utilities.showSuccessNotification('Campaign is started!');
+          }
+        });
+
+        /*************************/
+        /** TO DO: Main logic **/
+        /*************************/
         // $("#contractForm").hide();
         $('#calculationResults').hide();
         $('#predictResultsBtn').on('click', function () {
@@ -991,6 +1103,7 @@
           $('#calculationResults').hide();
           $('#contractForm').show();
         });
+        /*************************/
       });
     </script>
   </body>
