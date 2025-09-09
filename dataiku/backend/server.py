@@ -3,6 +3,8 @@ import pandas as pd
 from flask import request, make_response, jsonify
 import requests
 import json
+import re
+import logging
 
 
 # ========================================================= #
@@ -97,6 +99,7 @@ def query():
     if content_type == 'application/json':
         json = request.json
         user_message = json.get('message', None)
+        print(user_message)
         if user_message:
             completion = llm.new_completion()
             completion.with_message(user_message)
@@ -113,5 +116,58 @@ def query():
         # response.headers['Content-type'] = 'application/json'
         # return response
         return jsonify(status="ok", data=msg)
+    else:
+        return 'Content-Type is not supported!'
+    
+    
+    
+    
+@app.route('/predict_internal', methods=['POST'])
+def predict_internal():
+    content_type = request.headers.get('Content-Type')
+    if content_type == 'application/json':
+        body = request.json
+        contract_data = body.get('contract_data', None)
+        user_message = json.dumps(contract_data, indent=2)
+        
+        # STEP 1: Get the data from LLM
+        
+        completion = llm.new_completion()
+        completion.with_message(user_message)
+        resp = completion.execute()
+        raw_message = resp.text
+        
+        print(raw_message)
+        
+        # STEP 2: Extract JSON inside ```json ... ``` block
+        match = re.search(r"```json\s*(\{.*?\})\s*```", raw_message, re.DOTALL)
+        if match:
+            inner_json_str = match.group(1)
+            print(inner_json_str)
+        else:
+            inner_json_str = raw_message
+            print("No JSON block found in GPT response.")
+            
+        # STEP 3: Parse the inner JSON
+        try:
+            parsed_data = json.loads(inner_json_str)
+        except json.JSONDecodeError:
+            logging.error("Failed to decode JSON from GPT output.")
+            parsed_data = {}
+
+        # STEP 4: Build the clean result
+        result = {
+            "contract_id": parsed_data.get("contract_id"),
+            "upgrade_readiness_score": parsed_data.get("upgrade_readiness_score"),
+            "justification": parsed_data.get("justification"),
+            "user_explanation": parsed_data.get("user_explanation"),
+            "recommended_model": parsed_data.get("recommended_model"),
+            "estimated_business_value": parsed_data.get("estimated_business_value"),
+            "business_value_calculation": parsed_data.get("business_value_calculation")
+        }
+            
+        print(result)
+        
+        return json.dumps(result, indent=2)
     else:
         return 'Content-Type is not supported!'

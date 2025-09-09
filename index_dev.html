@@ -434,7 +434,7 @@
         <h4 class="title">Contracts</h4>
       </div>
 
-      <!-- Contract selector contract dropdown -->
+      <!-- Contract selector -->
       <div class="row px-3">
         <div class="col-md-6">
           <div class="form-group">
@@ -446,21 +446,62 @@
         </div>
       </div>
 
-      <div class="card-header">
-        <h5 class="title">Contract Information</h5>
-      </div>
-
       <div class="card-body">
         <form id="contractForm">
-          <!-- Loan Basics -->
+          <!-- Contract Info -->
+          <div class="section-header mb-2">
+            <h5 class="title">Contract Information</h5>
+            <hr class="bg-light" />
+          </div>
+
           <div class="row">
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
-                <label for="cfrm-loan_contract_id">Loan Contract ID</label>
+                <label for="cfrm-contract_type">Contract Type</label>
+                <input type="text" class="form-control" id="cfrm-contract_type" />
+              </div>
+            </div>
+            <div class="col-md-6 pl-md-1">
+              <div class="form-group">
+                <label for="cfrm-contract_status">Contract Status</label>
+                <input type="text" class="form-control" id="cfrm-contract_status" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 pr-md-1">
+              <div class="form-group">
+                <label for="cfrm-contract_term_months">Contract Term (Months)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-contract_term_months"
+                />
+              </div>
+            </div>
+            <div class="col-md-6 pl-md-1">
+              <div class="form-group">
+                <label for="cfrm-contract_start_date">Contract Start Date</label>
+                <input type="date" class="form-control" id="cfrm-contract_start_date" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer -->
+          <div class="section-header mt-4 mb-2">
+            <h5 class="title">Customer Profile</h5>
+            <hr class="bg-light" />
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 pr-md-1">
+              <div class="form-group">
+                <label for="cfrm-customer_id">Customer ID</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="cfrm-loan_contract_id"
+                  id="cfrm-customer_id"
                   readonly
                 />
               </div>
@@ -473,11 +514,170 @@
             </div>
           </div>
 
-          <!-- Engagement -->
           <div class="row">
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
-                <label for="cfrm-campaign_engagement_score"></label>
+                <label for="cfrm-employment_status">Employment Status</label>
+                <input type="text" class="form-control" id="cfrm-employment_status" />
+              </div>
+            </div>
+            <div class="col-md-6 pl-md-1">
+              <div class="form-group">
+                <label for="cfrm-income_level_eur">Income Level (€)</label>
+                <input type="number" class="form-control" id="cfrm-income_level_eur" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Loan -->
+          <div class="section-header mt-4 mb-2">
+            <h5 class="title">Loan Details</h5>
+            <hr class="bg-light" />
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 pr-md-1">
+              <div class="form-group">
+                <label for="cfrm-loan_type">Loan Type</label>
+                <input type="text" class="form-control" id="cfrm-loan_type" />
+              </div>
+            </div>
+            <div class="col-md-6 pl-md-1">
+              <div class="form-group">
+                <label for="cfrm-loan_amount_eur">Loan Amount (€)</label>
+                <input type="number" class="form-control" id="cfrm-loan_amount_eur" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 pr-md-1">
+              <div class="form-group">
+                <label for="cfrm-loan_term_months">Loan Term (Months)</label>
+                <input type="number" class="form-control" id="cfrm-loan_term_months" />
+              </div>
+            </div>
+            <div class="col-md-6 pl-md-1">
+              <div class="form-group">
+                <label for="cfrm-interest_rate">Interest Rate (%)</label>
+                <input type="text" class="form-control" id="cfrm-interest_rate" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Dates -->
+          <div class="section-header mt-4 mb-2">
+            <h5 class="title">Dates</h5>
+            <hr class="bg-light" />
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 pr-md-1">
+              <div class="form-group">
+                <label for="cfrm-date_of_loan">Date of Loan</label>
+                <input type="date" class="form-control" id="cfrm-date_of_loan" />
+              </div>
+            </div>
+            <div class="col-md-6 pl-md-1">
+              <div class="form-group">
+                <label for="cfrm-date_of_loan_expiry">Date of Loan Expiry</label>
+                <input type="date" class="form-control" id="cfrm-date_of_loan_expiry" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Credit -->
+          <div class="section-header mt-4 mb-2">
+            <h5 class="title">Credit Information</h5>
+            <hr class="bg-light" />
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 pr-md-1">
+              <div class="form-group">
+                <label for="cfrm-credit_score">Credit Score</label>
+                <input type="number" class="form-control" id="cfrm-credit_score" />
+              </div>
+            </div>
+            <div class="col-md-6 pl-md-1">
+              <div class="form-group">
+                <label for="cfrm-credit_history_length_years">
+                  Credit History Length (Years)
+                </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-credit_history_length_years"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 pr-md-1">
+              <div class="form-group">
+                <label for="cfrm-previous_loan_defaults">Previous Loan Defaults</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cfrm-previous_loan_defaults"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Vehicle -->
+          <div class="section-header mt-4 mb-2">
+            <h5 class="title">Vehicle Information</h5>
+            <hr class="bg-light" />
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 pr-md-1">
+              <div class="form-group">
+                <label for="cfrm-vehicle_age_years">Vehicle Age (Years)</label>
+                <input type="number" class="form-control" id="cfrm-vehicle_age_years" />
+              </div>
+            </div>
+            <div class="col-md-6 pl-md-1">
+              <div class="form-group">
+                <label for="cfrm-vehicle_value_eur">Vehicle Value (€)</label>
+                <input type="number" class="form-control" id="cfrm-vehicle_value_eur" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Risk -->
+          <div class="section-header mt-4 mb-2">
+            <h5 class="title">Risk & Payments</h5>
+            <hr class="bg-light" />
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 pr-md-1">
+              <div class="form-group">
+                <label for="cfrm-days_past_due">Days Past Due</label>
+                <input type="number" class="form-control" id="cfrm-days_past_due" />
+              </div>
+            </div>
+            <div class="col-md-6 pl-md-1">
+              <div class="form-group">
+                <label for="cfrm-missed_payments">Missed Payments</label>
+                <input type="number" class="form-control" id="cfrm-missed_payments" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Engagement -->
+          <div class="section-header mt-4 mb-2">
+            <h5 class="title">Engagement</h5>
+            <hr class="bg-light" />
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 pr-md-1">
+              <div class="form-group">
+                <label for="cfrm-campaign_engagement_score">
                   Campaign Engagement Score
                 </label>
                 <input
@@ -499,75 +699,6 @@
             </div>
           </div>
 
-          <!-- Credit -->
-          <div class="row">
-            <div class="col-md-6 pr-md-1">
-              <div class="form-group">
-                <label for="cfrm-credit_history_length">
-                  Credit History Length (Years)
-                </label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="cfrm-credit_history_length"
-                />
-              </div>
-            </div>
-            <div class="col-md-6 pl-md-1">
-              <div class="form-group">
-                <label for="cfrm-credit_score">Credit Score</label>
-                <input type="number" class="form-control" id="cfrm-credit_score" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Loan Details -->
-          <div class="row">
-            <div class="col-md-6 pr-md-1">
-              <div class="form-group">
-                <label for="cfrm-loan_type">Loan Type</label>
-                <input type="text" class="form-control" id="cfrm-loan_type" />
-              </div>
-            </div>
-            <div class="col-md-6 pl-md-1">
-              <div class="form-group">
-                <label for="cfrm-loan_amount">Loan Amount ($)</label>
-                <input type="number" class="form-control" id="cfrm-loan_amount" />
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 pr-md-1">
-              <div class="form-group">
-                <label for="cfrm-loan_term">Loan Term (Months)</label>
-                <input type="number" class="form-control" id="cfrm-loan_term" />
-              </div>
-            </div>
-            <div class="col-md-6 pl-md-1">
-              <div class="form-group">
-                <label for="cfrm-interest_rate">Interest Rate (%)</label>
-                <input type="text" class="form-control" id="cfrm-interest_rate" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Dates -->
-          <div class="row">
-            <div class="col-md-6 pr-md-1">
-              <div class="form-group">
-                <label for="cfrm-date_of_loan">Date of Loan</label>
-                <input type="date" class="form-control" id="cfrm-date_of_loan" />
-              </div>
-            </div>
-            <div class="col-md-6 pl-md-1">
-              <div class="form-group">
-                <label for="cfrm-date_of_loan_expiry">Date of Loan Expiry</label>
-                <input type="date" class="form-control" id="cfrm-date_of_loan_expiry" />
-              </div>
-            </div>
-          </div>
-
           <div class="row">
             <div class="col-md-6 pr-md-1">
               <div class="form-group">
@@ -577,49 +708,6 @@
                   class="form-control"
                   id="cfrm-last_interaction_date"
                 />
-              </div>
-            </div>
-            <div class="col-md-6 pl-md-1">
-              <div class="form-group">
-                <label for="cfrm-customer_id">Customer ID</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cfrm-customer_id"
-                  readonly
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Risk & Payments -->
-          <div class="row">
-            <div class="col-md-6 pr-md-1">
-              <div class="form-group">
-                <label for="cfrm-days_past_due">Days Past Due</label>
-                <input type="number" class="form-control" id="cfrm-days_past_due" />
-              </div>
-            </div>
-            <div class="col-md-6 pl-md-1">
-              <div class="form-group">
-                <label for="cfrm-missed_payments">Missed Payments</label>
-                <input type="number" class="form-control" id="cfrm-missed_payments" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Profile -->
-          <div class="row">
-            <div class="col-md-6 pr-md-1">
-              <div class="form-group">
-                <label for="cfrm-employment_status">Employment Status</label>
-                <input type="text" class="form-control" id="cfrm-employment_status" />
-              </div>
-            </div>
-            <div class="col-md-6 pl-md-1">
-              <div class="form-group">
-                <label for="cfrm-income_level">Income Level ($)</label>
-                <input type="number" class="form-control" id="cfrm-income_level" />
               </div>
             </div>
           </div>
