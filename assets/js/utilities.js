@@ -59,7 +59,7 @@ utilities = {
       },
       {
         type: type[4],
-        timer: 500,
+        timer: 2000,
         placement: {
           from: from,
           align: align,
@@ -75,7 +75,7 @@ utilities = {
       },
       {
         type: type[2],
-        timer: 500,
+        timer: 2000,
         placement: {
           from: from,
           align: align,
