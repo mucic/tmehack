@@ -80,10 +80,11 @@ $('#cfrm-select-contract_id').on('change', function () {
 /** On Predict Optimal Trade-in Time Button Click**/
 /**************************************************/
 
-/******************************/
-/** Set Contract Information **/
-/******************************/
+/**********************/
+/** Helper functions **/
+/**********************/
 
+// Contract form - Write data to form fiields
 function setContractFormData(data) {
   $.each(data, function (key, value) {
     // normalize key: lower case, replace spaces with underscores
